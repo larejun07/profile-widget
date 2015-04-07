@@ -1,0 +1,66 @@
+{
+    "username": "john", 
+    "name": "John Smith", 
+    "avatar": "assets/images/pic.jpg",
+    "posts": [
+        {
+            "title": "My Post Number One", 
+            "content": "This is the post content of my post number one", 
+            "likes": [
+                "mike",
+                "anna"
+            ], 
+            "comments": [
+                {
+                    "author": "mike", 
+                    "message": "comment message"
+                }, 
+                {
+                    "author": "anna", 
+                    "message": "comment message"
+                }, 
+                {
+                    "author": "john", 
+                    "message": "comment message"
+                }
+            ]
+        }, 
+        {
+            "title": "My Second Post", 
+            "content": "This is the post content of my post number two", 
+            "likes": [
+                "mike",
+                "anna"
+            ], 
+            "comments": [
+                {
+                    "author": "mike", 
+                    "message": "comment message"
+                }, 
+                {
+                    "author": "anna", 
+                    "message": "comment message"
+                }
+            ]
+        }, 
+        {
+            "title": "My Third Post", 
+            "content": "This is the post content of my post number three", 
+            "likes": [], 
+            "comments": []
+        }, 
+        {
+            "title": "My Post Number Four", 
+            "content": "This is the post content of my post number four", 
+            "likes": [
+                "anna"
+            ],
+            "comments": [
+                {
+                    "author": "anna", 
+                    "message": "comment message"
+                }
+            ]
+        }
+    ]
+}

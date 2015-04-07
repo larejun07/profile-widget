@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" ng-app="profileApp">
+<head>
+  <meta charset="utf-8">
+  <title>Profile Widget</title>
+  <link rel="stylesheet" href="assets/css/material-design.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="profile-box clearfix" ng-controller="ProfileCtrl">
+      <div class="user-avatar">
+        <img class="avatar" ng-src="{{user.avatar}}">
+      </div>
+      <div class="user-info">
+        <div class="name" ng-bind="user.name"></div>
+        <div class="stats-box">
+          <div class="posts">
+            <div class="count" ng-bind="postsCount">0</div>
+            Posts
+          </div>
+          <div class="likes">
+            <div class="count" ng-bind="likesCount">0</div>
+            Likes
+          </div>
+          <div class="comments">
+            <div class="count" ng-bind="commentsCount">0</div>
+            Comments
+          </div>
+        </div>
+      </div>
+      <div posts-box posts="user.posts" username="user.username"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/libs/jquery.js"></script>
+  <script src="assets/js/libs/angular.js"></script>
+  <script src="assets/js/libs/angular-resource.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/controllers.js"></script>
+  <script src="assets/js/services.js"></script>
+  <script src="assets/js/directives.js"></script>
+</body>
+</html>

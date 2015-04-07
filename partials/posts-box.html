@@ -1,0 +1,62 @@
+<section class="posts-box clearfix">
+  <div class="posts-list-wrapper">
+    <div class="posts-list">
+      <article class="post" ng-repeat="post in posts" ng-class="isActive($index)">
+        <h3 class="title" ng-bind="post.title"></h3>
+        <p class="content" ng-bind="post.content"></p>
+      </article>
+    </div>
+    <a class="nav-prev" title="Previous" ng-click="prevPost()"><i class="md md-keyboard-arrow-left"></i></a>
+    <a class="nav-next" title="Next" ng-click="nextPost()"><i class="md md-keyboard-arrow-right"></i></a>
+  </div>
+
+  <div class="post-stats">
+    <span class="likes" ng-bind="getLikesCount() + ' likes'"></span>
+    <span class="comments" ng-bind="getCommentsCount() + ' comments'"></span>
+  </div>
+
+  <div class="comments-list">
+    <div class="comment" ng-repeat="comment in getComments()">
+      <span class="author" ng-bind="'@' + comment.author"></span>
+      <span class="msg" ng-bind="comment.message"></span>
+    </div>
+  </div>
+
+  <div class="comment-form">
+    <h3>Leave a Reply</h3>
+    <div class="field">
+      <label>Name</label>
+      <input type="text" ng-model="name">
+    </div>
+    <div class="field">
+      <label>Comment</label>
+      <textarea ng-model="comment" cols="25" rows="5"></textarea>
+    </div>
+    <div class="form-action">
+      <button type="button" ng-click="saveComment()">Save</button>
+      <button type="button" ng-click="cancelComment()">Cancel</button>
+    </div>
+  </div>
+
+  <div class="post-form">
+    <h3>Create New Post</h3>
+    <div class="field">
+      <label>Title</label>
+      <input type="text" ng-model="title">
+    </div>
+    <div class="field">
+      <label>Content</label>
+      <textarea ng-model="content" cols="25" rows="5"></textarea>
+    </div>
+    <div class="form-action">
+      <button type="button" ng-click="savePost()">Save</button>
+      <button type="button" ng-click="cancelPost()">Cancel</button>
+    </div>
+  </div>
+
+  <div class="action">
+    <a class="new-post" title="New Post" ng-click="newPost()"><i class="md md-add-circle"></i></a>
+    <a class="reply" title="Reply" ng-click="reply()"><i class="md md-reply"></i></a>
+    <a class="like" title="Like" ng-click="like()" ng-class="userLiked()"><i class="md md-favorite"></i></a>
+  </div>
+</section>
