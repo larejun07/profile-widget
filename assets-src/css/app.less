@@ -26,6 +26,19 @@ img {
   clear: both;
 }
 
+.transition (@value) {
+  -webkit-transition: @value;
+  -moz-transition: @value;
+  -o-transition: @value;
+  transition: @value;
+}
+
+.transform (@value) {
+  -webkit-transform: @value;
+  -ms-transform: @value;
+  transform: @value;
+}
+
 // Scafolding
 .container {
   width: 600px;
@@ -105,8 +118,7 @@ img {
   & > .post {
     position: relative;
     display: none;
-    -webkit-transition: .6s ease-in-out left;
-    transition: .6s ease-in-out left;
+    .transition (.6s ease-in-out left);
 
     &.prev,
     &.next,
@@ -215,16 +227,12 @@ img {
   border: 1px solid #ccc;
   box-shadow: 0 0 5px #ddd;
   -webkit-transition: -webkit-transform .3s ease-out;
-     -moz-transition:    -moz-transform .3s ease-out;
-       -o-transition:      -o-transform .3s ease-out;
-          transition:         transform .3s ease-out;
-  -webkit-transform: translate(0, 110%);
-      -ms-transform: translate(0, 110%);
-          transform: translate(0, 110%);
+  -moz-transition: -moz-transform .3s ease-out;
+  -o-transition: -o-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  .transform (translate(0, 110%));
   &.show {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
+    .transform (translate(0, 0));
   }
   & > h3 {
     margin-top: 0;
